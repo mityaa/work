@@ -1,4 +1,3 @@
-var dateFormat = require('dateformat');
 var webdriver = require('selenium-webdriver');
 var util = require('util');
 var sleep = require('thread-sleep');
@@ -36,7 +35,6 @@ module.exports = class Harakiri {
         delay = delay || 60;
         let _self = this;
         let driver = this.driver;
-        // цикл в зависимости от количества секунд
         driver.findElement(webdriver.By.xpath(util.format(_self.xpathes.href, textUrl)))
             .then(function (element) {
                 element.click();
